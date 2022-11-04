@@ -6,12 +6,12 @@ import javax.swing.JOptionPane;
 
 
 
-public class CadastroClientes extends javax.swing.JFrame {
+public class EmployeeRegisterPanel extends javax.swing.JFrame {
 
     MySQL conectar = new MySQL();
     Cliente novoCliente = new Cliente("","","","","","");
             
-    public CadastroClientes() {
+    public EmployeeRegisterPanel() {
         initComponents();
         setLocationRelativeTo(null);
     }
@@ -248,12 +248,12 @@ public class CadastroClientes extends javax.swing.JFrame {
                     + "'" + novoCliente.GetCidade() + "',"
                     + "'" + novoCliente.GetEstado() + "'"
                 + ");");
+            JOptionPane.showMessageDialog(null, "Cliente cadastrado com sucesso!");
         } catch (Exception e) {
             System.out.println("Erro ao Cadastrar Cliente: " + e.getMessage());
             JOptionPane.showMessageDialog(null, "Erro ao cadastrar cliente!");
         } finally {
             this.conectar.fechaBanco();
-            JOptionPane.showMessageDialog(null, "Cliente cadastrado com sucesso!");
         }
     }
     
@@ -291,20 +291,23 @@ public class CadastroClientes extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastroClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EmployeeRegisterPanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastroClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EmployeeRegisterPanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastroClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EmployeeRegisterPanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastroClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EmployeeRegisterPanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CadastroClientes().setVisible(true);
+                new EmployeeRegisterPanel().setVisible(true);
             }
         });
     }
