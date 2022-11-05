@@ -4,18 +4,18 @@ package Entities;
 
 public class User {
     
-    private String _nome;
+    private String _name;
     private String _email;
     private String _login;
-    private String _senha;
+    private String _password;
     private int _Cpf;
     
     
-    public String GetNome (){
-    return this._nome;
+    public String GetName (){
+    return this._name;
 }
-    public void SetNome(String nome) {
-        this._nome = nome;
+    public void SetName(String nome) {
+        this._name = nome;
     }
     
         public String GetEmail (){
@@ -34,12 +34,12 @@ public class User {
         this._login = login;
     }
     
-        public String GetSenha (){
-    return this._senha;
+        public String GetPassword (){
+    return this._password;
 }
         
-    public void SetSenha(String senha) {
-        this._senha = senha;
+    public void SetPassword(String senha) {
+        this._password = senha;
     }
     
         public int GetCpf (){
