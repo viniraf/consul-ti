@@ -4,52 +4,59 @@ package Entities;
 
 public class User {
     
-    private String _name;
-    private String _email;
-    private String _login;
-    private String _password;
-    private int _Cpf;
-    
+    private String name;
+    private String email;
+    private String login;
+    private String password;
+    private int cpf;
+    private int registration;
     
     public String GetName (){
-    return this._name;
+    return this.name;
 }
-    public void SetName(String nome) {
-        this._name = nome;
+    public void SetName(String name) {
+        this.name = name;
     }
     
         public String GetEmail (){
-    return this._email;
+    return this.email;
 }
         
     public void SetEmail(String email) {
-        this._email = email;
+        this.email = email;
     }
     
         public String GetLogin (){
-    return this._login;
+    return this.login;
 }
         
     public void SetLogin(String login) {
-        this._login = login;
+        this.login = login;
     }
     
         public String GetPassword (){
-    return this._password;
+    return this.password;
 }
         
     public void SetPassword(String senha) {
-        this._password = senha;
+        this.password = senha;
     }
     
         public int GetCpf (){
-    return this._Cpf;
+    return this.cpf;
 }
         
     public void SetCpf(int cpf) {
-        this._Cpf = cpf;
+        this.cpf = cpf;
     }
     
+    public int GetRegistration (){
+    return this.registration;
+}
+        
+    public void SetRegistration(int registration) {
+        this.registration = registration;
+    }
     
     
     

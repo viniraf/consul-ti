@@ -6,13 +6,13 @@ package Entities;
 
 public class Employee extends User{
     
-    private String _area;
+    private String area;
     
     public String GetArea() {
-        return _area;
+        return area;
     }
     public void SetArea(String area) {
-        this._area = area;
+        this.area = area;
     }
     
     

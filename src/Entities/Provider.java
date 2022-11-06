@@ -4,15 +4,17 @@
  */
 package Entities;
 
-public class Collaborator extends User{
-    private String _categoria;
-    
-    public String GetCategoria() {
-        return _categoria;
+public class Provider extends User{
+    private String category;
+
+    public String GetCategory() {
+        return category;
+    }
+
+    public void SetCategory(String category) {
+        this.category = category;
     }
     
-    public void SetCategoria(String categoria) {
-        this._categoria = categoria;
-    }
+
     
 }
