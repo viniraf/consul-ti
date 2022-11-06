@@ -1,4 +1,4 @@
-package View;
+package View.Login;
 
 import Connection.MySQL;
 import Entities.Employee;
@@ -248,7 +248,7 @@ public class EmployeeRegisterPanel extends javax.swing.JFrame {
         newEmployee.SetRegistration(Integer.parseInt(txtRegistration.getText()));
         
         try {
-            this.conectar.insertSQL("INSERT INTO registerEmployee ("
+            this.conectar.insertSQL("INSERT INTO employee ("
                     + "name,"
                     + "cpf,"
                     + "email,"
