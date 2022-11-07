@@ -4,6 +4,7 @@
  */
 package View;
 
+import View.MenuItems.ProviderSearchPanel;
 import View.MenuItems.CompanySearchPanel;
 import View.MenuItems.CompanyRegisterPanel;
 import View.MenuItems.ProviderRegisterPanel;
@@ -66,6 +67,11 @@ public class Menu extends javax.swing.JFrame {
 
         btnBuscarPrestador.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnBuscarPrestador.setText("BUSCAR");
+        btnBuscarPrestador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarPrestadorActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelPretadoresLayout = new javax.swing.GroupLayout(PanelPretadores);
         PanelPretadores.setLayout(PanelPretadoresLayout);
@@ -198,6 +204,11 @@ public class Menu extends javax.swing.JFrame {
         CompanySearchPanel obj = new CompanySearchPanel();
         obj.setVisible(true); 
     }//GEN-LAST:event_btnBuscarEmpresaActionPerformed
+
+    private void btnBuscarPrestadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarPrestadorActionPerformed
+        ProviderSearchPanel obj = new ProviderSearchPanel();
+        obj.setVisible(true);
+    }//GEN-LAST:event_btnBuscarPrestadorActionPerformed
 
     /**
      * @param args the command line arguments

@@ -2,11 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package View;
+package View.MenuItems;
 
 import Connection.MySQL;
 import Entities.Provider;
 import Entities.OnlyNumbers;
+import View.MenuItems.CompanyRegisterPanel;
 import javax.swing.JOptionPane;
 
 /**
@@ -140,23 +141,6 @@ public class ProviderSearchPanel extends javax.swing.JFrame {
         txtRegistration.setText("");
            }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -230,6 +214,11 @@ public class ProviderSearchPanel extends javax.swing.JFrame {
 
         btnChangePassword.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnChangePassword.setText("ALTERAR SENHA");
+        btnChangePassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnChangePasswordActionPerformed(evt);
+            }
+        });
 
         btnDelete.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnDelete.setText("DELETAR");
@@ -357,8 +346,6 @@ public class ProviderSearchPanel extends javax.swing.JFrame {
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
-        jPanel1.getAccessibleContext().setAccessibleName("Busca de Prestador");
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -381,6 +368,11 @@ public class ProviderSearchPanel extends javax.swing.JFrame {
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         DeleteProvider();
     }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void btnChangePasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangePasswordActionPerformed
+        ProviderChangePassword obj = new ProviderChangePassword();
+        obj.setVisible(true);
+    }//GEN-LAST:event_btnChangePasswordActionPerformed
 
     /**
      * @param args the command line arguments
