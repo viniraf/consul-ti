@@ -5,6 +5,7 @@
 package Entities;
 
 public class Provider extends User{
+    
     private String category;
 
     public String GetCategory() {

@@ -34,8 +34,8 @@ public class Menu extends javax.swing.JFrame {
         btnCadastrarEmpresa = new javax.swing.JButton();
         btnBuscarEmpresa = new javax.swing.JButton();
         PanelServico = new javax.swing.JPanel();
-        btnCadastrarServico = new javax.swing.JButton();
-        btnBuscarServico = new javax.swing.JButton();
+        btnSolicitarServico = new javax.swing.JButton();
+        btnFinalizarServico = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(500, 500));
@@ -106,11 +106,11 @@ public class Menu extends javax.swing.JFrame {
 
         PanelServico.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Serviço", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial Black", 1, 12))); // NOI18N
 
-        btnCadastrarServico.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnCadastrarServico.setText("CADASTRAR");
+        btnSolicitarServico.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnSolicitarServico.setText("SOLICITAR");
 
-        btnBuscarServico.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnBuscarServico.setText("BUSCAR");
+        btnFinalizarServico.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnFinalizarServico.setText("FINALIZAR");
 
         javax.swing.GroupLayout PanelServicoLayout = new javax.swing.GroupLayout(PanelServico);
         PanelServico.setLayout(PanelServicoLayout);
@@ -119,17 +119,17 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(PanelServicoLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(PanelServicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnBuscarServico, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCadastrarServico, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnFinalizarServico, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSolicitarServico, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
         PanelServicoLayout.setVerticalGroup(
             PanelServicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelServicoLayout.createSequentialGroup()
                 .addGap(48, 48, 48)
-                .addComponent(btnCadastrarServico, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSolicitarServico, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
-                .addComponent(btnBuscarServico, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnFinalizarServico, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(52, Short.MAX_VALUE))
         );
 
@@ -213,9 +213,9 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel PanelServico;
     private javax.swing.JButton btnBuscarEmpresa;
     private javax.swing.JButton btnBuscarPrestador;
-    private javax.swing.JButton btnBuscarServico;
     private javax.swing.JButton btnCadastrarEmpresa;
     private javax.swing.JButton btnCadastrarPrestador;
-    private javax.swing.JButton btnCadastrarServico;
+    private javax.swing.JButton btnFinalizarServico;
+    private javax.swing.JButton btnSolicitarServico;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,7 +5,6 @@ public class Company {
 
     private String name;
     private String category;
-    private int providerQuantity;
     private float monthsContractTime;
     
     public String getName() {
@@ -22,14 +21,6 @@ public class Company {
 
     public void setCategory(String category) {
         this.category = category;
-    }
-
-    public int getColaboratorQuantity() {
-        return providerQuantity;
-    }
-
-    public void setColaboratorQuantity(int providerQuantityQuantity) {
-        this.providerQuantity = providerQuantityQuantity;
     }
     
     public float getMonthsContractTime() {

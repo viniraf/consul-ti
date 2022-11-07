@@ -19,9 +19,9 @@ public class MySQL {
     private ResultSet resultSet;
     
     private String servidor = "localhost:3306";
-    private String nomeDoBanco = "banco_loja";
+    private String nomeDoBanco = "consulti";
     private String usuario = "root";
-    private String senha = "facens";
+    private String senha = "";
     
     //Construtor    
     public MySQL(){

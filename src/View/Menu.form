@@ -198,8 +198,8 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="btnBuscarServico" min="-2" pref="143" max="-2" attributes="0"/>
-                      <Component id="btnCadastrarServico" min="-2" pref="143" max="-2" attributes="0"/>
+                      <Component id="btnFinalizarServico" min="-2" pref="143" max="-2" attributes="0"/>
+                      <Component id="btnSolicitarServico" min="-2" pref="143" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="25" max="32767" attributes="0"/>
               </Group>
@@ -209,29 +209,29 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                  <Component id="btnCadastrarServico" min="-2" pref="68" max="-2" attributes="0"/>
+                  <Component id="btnSolicitarServico" min="-2" pref="68" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                  <Component id="btnBuscarServico" min="-2" pref="68" max="-2" attributes="0"/>
+                  <Component id="btnFinalizarServico" min="-2" pref="68" max="-2" attributes="0"/>
                   <EmptySpace pref="52" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="btnCadastrarServico">
+        <Component class="javax.swing.JButton" name="btnSolicitarServico">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="CADASTRAR"/>
+            <Property name="text" type="java.lang.String" value="SOLICITAR"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="btnBuscarServico">
+        <Component class="javax.swing.JButton" name="btnFinalizarServico">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="BUSCAR"/>
+            <Property name="text" type="java.lang.String" value="FINALIZAR"/>
           </Properties>
         </Component>
       </SubComponents>

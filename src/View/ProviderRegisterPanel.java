@@ -35,17 +35,17 @@ public class ProviderRegisterPanel extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         txtEmail = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        txtCpf = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
+        txtCpf = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        txtPassword = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         cbxCategory = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         btnCadastrar = new javax.swing.JButton();
         btnLimpar = new javax.swing.JButton();
         txtLogin = new javax.swing.JTextField();
+        txtPassword = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -169,15 +169,6 @@ public class ProviderRegisterPanel extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(txtLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)
-                        .addComponent(txtPassword))
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -189,6 +180,14 @@ public class ProviderRegisterPanel extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPassword))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -221,7 +220,7 @@ public class ProviderRegisterPanel extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 489, Short.MAX_VALUE))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -243,7 +242,7 @@ public class ProviderRegisterPanel extends javax.swing.JFrame {
         this.conectar.conectaBanco();
         
         newProvider.SetName(txtName.getText());
-        newProvider.SetCpf(Integer.parseInt(txtRegistration.getText()));
+        newProvider.SetCpf(txtCpf.getText());
         newProvider.SetEmail(txtEmail.getText());
         newProvider.SetLogin(txtLogin.getText());
         newProvider.SetPassword(txtPassword.getText());
@@ -263,14 +262,15 @@ public class ProviderRegisterPanel extends javax.swing.JFrame {
                     + "'" + newProvider.GetName() + "',"
                     + "'" + newProvider.GetCpf() + "',"
                     + "'" + newProvider.GetEmail() + "',"
+                    + "'" + newProvider.GetRegistration() + "',"
                     + "'" + newProvider.GetLogin() + "',"
                     + "'" + newProvider.GetPassword() + "',"
                     + "'" + newProvider.GetCategory() + "'"
                 + ");");
-            JOptionPane.showMessageDialog(null, "Funcionário cadastrado com sucesso!");
+            JOptionPane.showMessageDialog(null, "Prestador cadastrado com sucesso!");
         } catch (Exception e) {
-            System.out.println("Erro ao Cadastrar Funcionário: " + e.getMessage());
-            JOptionPane.showMessageDialog(null, "Erro ao cadastrar funcionário!");
+            System.out.println("Erro ao Cadastrar o Prestador: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Erro ao cadastrar prestador!");
         } finally {
             this.conectar.fechaBanco();
         }
@@ -357,7 +357,7 @@ public class ProviderRegisterPanel extends javax.swing.JFrame {
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtLogin;
     private javax.swing.JTextField txtName;
-    private javax.swing.JTextField txtPassword;
+    private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtRegistration;
     // End of variables declaration//GEN-END:variables
 }

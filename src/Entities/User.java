@@ -8,7 +8,7 @@ public class User {
     private String email;
     private String login;
     private String password;
-    private int cpf;
+    private String cpf;
     private int registration;
     
     public String GetName (){
@@ -42,11 +42,11 @@ public class User {
         this.password = senha;
     }
     
-        public int GetCpf (){
+        public String GetCpf (){
     return this.cpf;
 }
         
-    public void SetCpf(int cpf) {
+    public void SetCpf(String cpf) {
         this.cpf = cpf;
     }
     
