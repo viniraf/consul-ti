@@ -5,6 +5,8 @@ public class Company {
 
     private String name;
     private String category;
+    private String cnpj;
+    private String creationDate;
     private int monthsContractTime;
     
     public String GetName() {
@@ -30,9 +32,22 @@ public class Company {
     public void SetMonthsContractTime(int monthsContractTime) {
         this.monthsContractTime = monthsContractTime;
     }
+    
+    public String GetCnpj() {
+        return cnpj;
+    }
 
+    public void SetCnpj (String cnpj) {
+        this.cnpj = cnpj;
+    }
     
-    
+    public String GetCreationDate() {
+        return creationDate;
+    }
+
+    public void SetCreationDate (String creationDate) {
+        this.creationDate = creationDate;
+    }
     
     
     

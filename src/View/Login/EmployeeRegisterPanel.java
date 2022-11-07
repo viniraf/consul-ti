@@ -2,7 +2,7 @@ package View.Login;
 
 import Connection.MySQL;
 import Entities.Employee;
-import Entities.User;
+import Entities.OnlyNumbers;
 import javax.swing.JOptionPane;
 
 
@@ -15,6 +15,7 @@ public class EmployeeRegisterPanel extends javax.swing.JFrame {
     public EmployeeRegisterPanel() {
         initComponents();
         setLocationRelativeTo(null);
+        txtCpf.setDocument(new OnlyNumbers());
     }
 
     /**

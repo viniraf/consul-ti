@@ -1,4 +1,4 @@
-package View;
+package View.MenuItems;
 
 import View.Login.*;
 import Connection.MySQL;
