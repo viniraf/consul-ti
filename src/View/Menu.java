@@ -79,6 +79,11 @@ public class Menu extends javax.swing.JFrame {
 
         btnCadastrarEmpresa.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnCadastrarEmpresa.setText("CADASTRAR");
+        btnCadastrarEmpresa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastrarEmpresaActionPerformed(evt);
+            }
+        });
 
         btnBuscarEmpresa.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnBuscarEmpresa.setText("BUSCAR");
@@ -171,6 +176,11 @@ public class Menu extends javax.swing.JFrame {
         ProviderRegisterPanel obj = new ProviderRegisterPanel();
         obj.setVisible(true);
     }//GEN-LAST:event_btnCadastrarPrestadorActionPerformed
+
+    private void btnCadastrarEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarEmpresaActionPerformed
+        CompanyRegisterPanel obj = new CompanyRegisterPanel();
+        obj.setVisible(true);  
+    }//GEN-LAST:event_btnCadastrarEmpresaActionPerformed
 
     /**
      * @param args the command line arguments

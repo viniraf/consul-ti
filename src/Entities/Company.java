@@ -5,29 +5,29 @@ public class Company {
 
     private String name;
     private String category;
-    private float monthsContractTime;
+    private int monthsContractTime;
     
-    public String getName() {
+    public String GetName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void SetName(String name) {
         this.name = name;
     }
 
-    public String getCategory() {
+    public String GetCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void SetCategory(String category) {
         this.category = category;
     }
     
-    public float getMonthsContractTime() {
+    public int GetMonthsContractTime() {
         return monthsContractTime;
     }
 
-    public void setMonthsContractTime(float monthsContractTime) {
+    public void SetMonthsContractTime(int monthsContractTime) {
         this.monthsContractTime = monthsContractTime;
     }
 
