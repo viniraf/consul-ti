@@ -2,6 +2,7 @@ package View.MenuItems;
 
 import View.Login.*;
 import Connection.MySQL;
+import Entities.OnlyNumbers;
 import Entities.Provider;
 import Entities.User;
 import javax.swing.JOptionPane;
@@ -16,6 +17,8 @@ public class ProviderRegisterPanel extends javax.swing.JFrame {
     public ProviderRegisterPanel() {
         initComponents();
         setLocationRelativeTo(null);
+        txtCpf.setDocument(new OnlyNumbers());
+        txtRegistration.setDocument(new OnlyNumbers());
     }
 
     /**
