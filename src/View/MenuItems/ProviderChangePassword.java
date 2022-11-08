@@ -107,12 +107,12 @@ Provider newProvider = new Provider();
 
         jPanel1 = new javax.swing.JPanel();
         lblUser = new javax.swing.JLabel();
-        txtOldPass = new javax.swing.JTextField();
         lblOldPass = new javax.swing.JLabel();
         lblNewPass = new javax.swing.JLabel();
         txtUser = new javax.swing.JTextField();
-        txtNewPass = new javax.swing.JTextField();
         btnChangePass = new javax.swing.JButton();
+        txtOldPass = new javax.swing.JPasswordField();
+        txtNewPass = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -149,15 +149,14 @@ Provider newProvider = new Provider();
                             .addComponent(lblNewPass))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtOldPass, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNewPass, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(34, Short.MAX_VALUE))
+                            .addComponent(txtOldPass)
+                            .addComponent(txtNewPass)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 36, Short.MAX_VALUE)
                         .addComponent(lblUser)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtUser, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37))))
+                        .addComponent(txtUser, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(37, 37, 37))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnChangePass, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -245,8 +244,8 @@ Provider newProvider = new Provider();
     private javax.swing.JLabel lblNewPass;
     private javax.swing.JLabel lblOldPass;
     private javax.swing.JLabel lblUser;
-    private javax.swing.JTextField txtNewPass;
-    private javax.swing.JTextField txtOldPass;
+    private javax.swing.JPasswordField txtNewPass;
+    private javax.swing.JPasswordField txtOldPass;
     private javax.swing.JTextField txtUser;
     // End of variables declaration//GEN-END:variables
 }
