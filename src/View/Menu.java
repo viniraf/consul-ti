@@ -4,6 +4,7 @@
  */
 package View;
 
+import View.MenuItems.ServiceRequest;
 import View.MenuItems.ProviderSearchPanel;
 import View.MenuItems.CompanySearchPanel;
 import View.MenuItems.CompanyRegisterPanel;
@@ -137,6 +138,11 @@ public class Menu extends javax.swing.JFrame {
 
         btnSolicitarServico.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnSolicitarServico.setText("SOLICITAR");
+        btnSolicitarServico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSolicitarServicoActionPerformed(evt);
+            }
+        });
 
         btnFinalizarServico.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnFinalizarServico.setText("FINALIZAR");
@@ -209,6 +215,11 @@ public class Menu extends javax.swing.JFrame {
         ProviderSearchPanel obj = new ProviderSearchPanel();
         obj.setVisible(true);
     }//GEN-LAST:event_btnBuscarPrestadorActionPerformed
+
+    private void btnSolicitarServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSolicitarServicoActionPerformed
+        ServiceRequest obj = new ServiceRequest();
+        obj.setVisible(true);
+    }//GEN-LAST:event_btnSolicitarServicoActionPerformed
 
     /**
      * @param args the command line arguments

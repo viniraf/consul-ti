@@ -2,11 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package View;
+package View.MenuItems;
 
 import Connection.MySQL;
 import Entities.Company;
 import Entities.OnlyNumbers;
+import Entities.Provider;
 import Entities.Services;
 import javax.swing.JOptionPane;
 
@@ -24,7 +25,32 @@ MySQL conectar = new MySQL();
         txtCnpj.setDocument(new OnlyNumbers());
     }
 
-
+    private void ProviderSearch() {
+        this.conectar.conectaBanco();
+        String consultaCategoria = (String)cbxCategory.getSelectedItem();
+        
+        try {
+            this.conectar.executarSQL(
+            "SELECT "
+            + "name,"
+            + "id"
+             + " FROM"
+            + " provider"
+          + " WHERE"
+            + " category = '" + consultaCategoria + "';"
+            );
+        while(this.conectar.getResultSet().next()) {
+            cbxProvider.addItem(this.conectar.getResultSet().getString(1));
+        }
+        } catch (Exception e) {
+            System.out.println("Erro ao consultar prestador: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Erro ao buscar Prestador!");
+        
+        } finally {
+            this.conectar.fechaBanco();     
+    }
+        
+    }
     private void SearchCnpj() {
         this.conectar.conectaBanco();
         Company newCompany = new Company();
@@ -48,12 +74,12 @@ MySQL conectar = new MySQL();
             txtId.setText(this.conectar.getResultSet().getString(2));
         }
         } catch (Exception e) {
-            System.out.println("Erro ao consultar Company " + e.getMessage());
-            JOptionPane.showMessageDialog(null, "Erro ao buscar Company!");
+            System.out.println("Erro ao consultar Empresa: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Erro ao buscar Empresa!");
         
         } finally {
             if(newCompany.GetName() == null) {
-            JOptionPane.showMessageDialog(null, "Company não encontrado!");
+            JOptionPane.showMessageDialog(null, "Empresa não encontrada!");
             }
             else {
             cbxCompany.addItem(newCompany.GetName());
@@ -68,9 +94,37 @@ MySQL conectar = new MySQL();
         txtRequester.setText("");
         cbxCategory.setSelectedIndex(0);
         txtDescription.setText("");
-        txtPrestador.setText("");
+        cbxCategory.removeAllItems();;
         txtId.setText("");
     }
+    
+     private int GetIdProvider (String provider) {
+         int idProvider = 0;
+         this.conectar.conectaBanco();
+         
+         try {
+            this.conectar.executarSQL(
+            "SELECT "
+            + "id"
+             + " FROM"
+            + " provider"
+          + " WHERE"
+            + " name = '" + provider + "';"
+            );
+            
+            while(this.conectar.getResultSet().next()) {
+            idProvider = this.conectar.getResultSet().getInt(1);
+        }
+            
+        } catch (Exception e) {
+            System.out.println("Erro ao solicitar ID: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Erro ao solicitar ID!");
+        } finally {
+       return idProvider;
+    }
+         
+     }
+    
     
      private void RegisterService() {
         this.conectar.conectaBanco();
@@ -78,18 +132,20 @@ MySQL conectar = new MySQL();
         
         newService.SetDescription(txtDescription.getText());
         newService.SetCategory((String) cbxCategory.getSelectedItem());
-        newService.SetProvider(txtPrestador.getText());
+        newService.SetProvider((String) cbxCategory.getSelectedItem());
         
         try {
             this.conectar.insertSQL("INSERT INTO services ("
                     + "description,"
                     + "category,"
-                    + "provider,"
+                    + "requester,"
+                    + "idProvider,"
                     + "idCompany"
                 + ") VALUES ("
                     + "'" + newService.GetDescription() + "',"
                     + "'" + newService.GetCategory() + "',"
-                    + "'" + newService.GetProvider() + "',"
+                    + "'" + txtRequester.getText() + "',"
+                    + "'" + GetIdProvider((String)cbxProvider.getSelectedItem()) + "',"
                     + "'" + txtId.getText() + "'"
                 + ");");
             JOptionPane.showMessageDialog(null, "Serviço cadastrado com sucesso!");
@@ -124,12 +180,11 @@ MySQL conectar = new MySQL();
         lblDescription = new javax.swing.JLabel();
         lblCategory1 = new javax.swing.JLabel();
         cbxProvider = new javax.swing.JComboBox<>();
-        lblId1 = new javax.swing.JLabel();
-        txtIdProvider = new javax.swing.JTextField();
+        btnSearch1 = new javax.swing.JButton();
         btnClear = new javax.swing.JButton();
         btnRequest = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Solicitar Serviço"));
         jPanel1.setName("Solicitar Serviço"); // NOI18N
@@ -182,14 +237,15 @@ MySQL conectar = new MySQL();
                         .addComponent(txtRequester, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnSearch))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
+                        .addGap(53, 53, 53)
+                        .addComponent(btnSearch)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lblId)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(22, 22, 22))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -229,10 +285,13 @@ MySQL conectar = new MySQL();
         lblCategory1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblCategory1.setText("Prestador:");
 
-        lblId1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblId1.setText("ID:");
-
-        txtIdProvider.setFocusable(false);
+        btnSearch1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnSearch1.setText("BUSCAR PRESTADOR");
+        btnSearch1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearch1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -242,44 +301,41 @@ MySQL conectar = new MySQL();
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane1))
+                        .addComponent(lblDescription))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(41, 41, 41)
-                                .addComponent(lblCategory)
-                                .addGap(18, 18, 18)
-                                .addComponent(cbxCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(11, 11, 11)
-                                .addComponent(lblCategory1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cbxProvider, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(24, 24, 24)
-                                .addComponent(lblId1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtIdProvider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 56, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addGap(11, 11, 11)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblCategory1)
+                            .addComponent(lblCategory))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(cbxCategory, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cbxProvider, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSearch1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(25, 25, 25))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblDescription)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane1)
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cbxCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblCategory))
-                .addGap(16, 16, 16)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCategory1)
-                    .addComponent(cbxProvider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblId1)
-                    .addComponent(txtIdProvider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(8, 8, 8)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cbxCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblCategory))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblCategory1)
+                            .addComponent(cbxProvider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(13, 13, 13))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(btnSearch1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)))
                 .addComponent(lblDescription)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -307,21 +363,19 @@ MySQL conectar = new MySQL();
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(83, 83, 83)
+                .addComponent(btnRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(121, 121, 121))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(83, 83, 83)
-                .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(62, 62, 62)
-                .addComponent(btnRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -363,17 +417,20 @@ MySQL conectar = new MySQL();
 
     private void btnRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestActionPerformed
         String Company = (String)cbxCompany.getSelectedItem();
-        String Category = (String)cbxCategory.getSelectedItem();
+        String Provider = (String)cbxProvider.getSelectedItem();
+        
         if (Company == null) {
             JOptionPane.showMessageDialog(null, "Selecione uma empresa!");
         }
-        else if (txtRequester.getText() == "") {
+        else if (txtRequester.getText().length() == 0) {
             JOptionPane.showMessageDialog(null, "Digite um solicitante!");
         }
-        else if (Category == null) {
-            JOptionPane.showMessageDialog(null, "Selecione uma categoria!");
+        else if (Provider == null) {
+            JOptionPane.showMessageDialog(null, "Selecione um prestador!");
         }
-        
+        else if (txtDescription.getText().length() == 0) {
+            JOptionPane.showMessageDialog(null, "Digite a descrição do problema!");
+        }
         else {
         RegisterService();
         }
@@ -383,6 +440,10 @@ MySQL conectar = new MySQL();
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         ClearData();
     }//GEN-LAST:event_btnClearActionPerformed
+
+    private void btnSearch1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearch1ActionPerformed
+        ProviderSearch();
+    }//GEN-LAST:event_btnSearch1ActionPerformed
 
 
     public static void main(String args[]) {
@@ -421,6 +482,7 @@ MySQL conectar = new MySQL();
     private javax.swing.JButton btnClear;
     private javax.swing.JButton btnRequest;
     private javax.swing.JButton btnSearch;
+    private javax.swing.JButton btnSearch1;
     private javax.swing.JComboBox<String> cbxCategory;
     private javax.swing.JComboBox<String> cbxCompany;
     private javax.swing.JComboBox<String> cbxProvider;
@@ -434,12 +496,10 @@ MySQL conectar = new MySQL();
     private javax.swing.JLabel lblCompany;
     private javax.swing.JLabel lblDescription;
     private javax.swing.JLabel lblId;
-    private javax.swing.JLabel lblId1;
     private javax.swing.JLabel lblRequester;
     private javax.swing.JTextField txtCnpj;
     private javax.swing.JTextArea txtDescription;
     private javax.swing.JTextField txtId;
-    private javax.swing.JTextField txtIdProvider;
     private javax.swing.JTextField txtRequester;
     // End of variables declaration//GEN-END:variables
 }
