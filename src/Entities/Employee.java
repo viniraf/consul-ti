@@ -8,6 +8,15 @@ public class Employee extends User{
     
     private String area;
     
+    public Employee () {
+        
+    }
+    
+    public Employee (String name, String email, String login, String password, String cpf, int registration, String area) {
+        super(name, email, login, password, cpf, registration);
+        this.area = area;
+    }
+    
     public String GetArea() {
         return area;
     }

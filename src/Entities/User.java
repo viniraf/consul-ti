@@ -4,12 +4,26 @@ package Entities;
 
 public class User {
     
-    private String name;
-    private String email;
-    private String login;
-    private String password;
-    private String cpf;
-    private int registration;
+    protected String name;
+    protected String email;
+    protected String login;
+    protected String password;
+    protected String cpf;
+    protected int registration;
+    
+    public User () {
+        
+    }
+    
+    public User (String name, String email, String login, String password, String cpf, int registration) {
+        this.name = name;
+        this.email = email;
+        this.login = login;
+        this.password = password;
+        this.cpf = cpf;
+        this.registration = registration;
+    }
+    
     
     public String GetName (){
     return this.name;

@@ -10,6 +10,17 @@ public class Services {
     private String category;
     private String provider;
     
+    public Services () {
+        
+    }
+    
+    public Services (String description, String category, String provider) {
+        this.description = description;
+        this.category = category;
+        this.provider = provider;
+    }
+    
+    
     public String GetDescription() {
         return description;
     }

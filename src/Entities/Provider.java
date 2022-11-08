@@ -7,7 +7,16 @@ package Entities;
 public class Provider extends User{
     
     private String category;
-
+    
+    public Provider () {
+        
+    }
+    
+    public Provider (String name, String email, String login, String password, String cpf, int registration, String category) {
+        super(name, email, login, password, cpf, registration);
+        this.category = category;
+    }
+    
     public String GetCategory() {
         return category;
     }

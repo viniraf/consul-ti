@@ -9,6 +9,18 @@ public class Company {
     private String creationDate;
     private int monthsContractTime;
     
+    public Company (){
+    
+}
+    public Company (String name, String category, String cnpj, String creationDate, int monthsContractTime) {
+        this.name = name;
+        this.category = category;
+        this.cnpj = cnpj;
+        this.creationDate = creationDate;
+        this.monthsContractTime = monthsContractTime;
+    }
+    
+    
     public String GetName() {
         return name;
     }

@@ -50,9 +50,6 @@
         </Property>
         <Property name="name" type="java.lang.String" value="Solicitar Servi&#xe7;o" noResource="true"/>
       </Properties>
-      <AccessibilityProperties>
-        <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Solicitar Servi&#xe7;o"/>
-      </AccessibilityProperties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -87,7 +84,7 @@
                   <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnRequest" alignment="3" min="-2" pref="58" max="-2" attributes="0"/>
                       <Component id="btnClear" alignment="3" min="-2" pref="58" max="-2" attributes="0"/>
@@ -259,18 +256,26 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jScrollPane1" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="lblCategory1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblCategory" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                                      <Component id="lblCategory" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="cbxCategory" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                                      <Component id="lblCategory1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="cbxProvider" min="-2" pref="154" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                                      <Component id="lblId1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="txtIdProvider" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="cbxCategory" max="32767" attributes="0"/>
-                                  <Component id="txtPrestador" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="0" pref="58" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="56" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -290,14 +295,16 @@
                           <Component id="cbxCategory" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="lblCategory" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="lblCategory1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtPrestador" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbxProvider" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblId1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtIdProvider" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="12" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                       <Component id="lblDescription" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                   </Group>
@@ -360,7 +367,28 @@
                 <Property name="text" type="java.lang.String" value="Prestador:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtPrestador">
+            <Component class="javax.swing.JComboBox" name="cbxProvider">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="0"/>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblId1">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="ID:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtIdProvider">
+              <Properties>
+                <Property name="focusable" type="boolean" value="false"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>

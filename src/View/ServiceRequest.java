@@ -101,17 +101,6 @@ MySQL conectar = new MySQL();
         }
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -134,7 +123,9 @@ MySQL conectar = new MySQL();
         txtDescription = new javax.swing.JTextArea();
         lblDescription = new javax.swing.JLabel();
         lblCategory1 = new javax.swing.JLabel();
-        txtPrestador = new javax.swing.JTextField();
+        cbxProvider = new javax.swing.JComboBox<>();
+        lblId1 = new javax.swing.JLabel();
+        txtIdProvider = new javax.swing.JTextField();
         btnClear = new javax.swing.JButton();
         btnRequest = new javax.swing.JButton();
 
@@ -238,6 +229,11 @@ MySQL conectar = new MySQL();
         lblCategory1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblCategory1.setText("Prestador:");
 
+        lblId1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblId1.setText("ID:");
+
+        txtIdProvider.setFocusable(false);
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -248,15 +244,22 @@ MySQL conectar = new MySQL();
                         .addContainerGap()
                         .addComponent(jScrollPane1))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblCategory1)
-                            .addComponent(lblCategory))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cbxCategory, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtPrestador))
-                        .addGap(0, 58, Short.MAX_VALUE)))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(41, 41, 41)
+                                .addComponent(lblCategory)
+                                .addGap(18, 18, 18)
+                                .addComponent(cbxCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(11, 11, 11)
+                                .addComponent(lblCategory1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cbxProvider, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(24, 24, 24)
+                                .addComponent(lblId1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtIdProvider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 56, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
@@ -270,13 +273,15 @@ MySQL conectar = new MySQL();
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cbxCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblCategory))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(16, 16, 16)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCategory1)
-                    .addComponent(txtPrestador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                    .addComponent(cbxProvider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblId1)
+                    .addComponent(txtIdProvider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(8, 8, 8)
                 .addComponent(lblDescription)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10))
         );
@@ -325,7 +330,7 @@ MySQL conectar = new MySQL();
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -349,8 +354,6 @@ MySQL conectar = new MySQL();
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1.getAccessibleContext().setAccessibleName("Solicitar Serviço");
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -360,9 +363,17 @@ MySQL conectar = new MySQL();
 
     private void btnRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestActionPerformed
         String Company = (String)cbxCompany.getSelectedItem();
+        String Category = (String)cbxCategory.getSelectedItem();
         if (Company == null) {
             JOptionPane.showMessageDialog(null, "Selecione uma empresa!");
         }
+        else if (txtRequester.getText() == "") {
+            JOptionPane.showMessageDialog(null, "Digite um solicitante!");
+        }
+        else if (Category == null) {
+            JOptionPane.showMessageDialog(null, "Selecione uma categoria!");
+        }
+        
         else {
         RegisterService();
         }
@@ -412,6 +423,7 @@ MySQL conectar = new MySQL();
     private javax.swing.JButton btnSearch;
     private javax.swing.JComboBox<String> cbxCategory;
     private javax.swing.JComboBox<String> cbxCompany;
+    private javax.swing.JComboBox<String> cbxProvider;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -422,11 +434,12 @@ MySQL conectar = new MySQL();
     private javax.swing.JLabel lblCompany;
     private javax.swing.JLabel lblDescription;
     private javax.swing.JLabel lblId;
+    private javax.swing.JLabel lblId1;
     private javax.swing.JLabel lblRequester;
     private javax.swing.JTextField txtCnpj;
     private javax.swing.JTextArea txtDescription;
     private javax.swing.JTextField txtId;
-    private javax.swing.JTextField txtPrestador;
+    private javax.swing.JTextField txtIdProvider;
     private javax.swing.JTextField txtRequester;
     // End of variables declaration//GEN-END:variables
 }
