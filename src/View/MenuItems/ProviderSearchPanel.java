@@ -17,7 +17,6 @@ import javax.swing.JOptionPane;
 public class ProviderSearchPanel extends javax.swing.JFrame {
 
     MySQL conectar = new MySQL();
-    Provider newProvider = new Provider();
 
     public ProviderSearchPanel() {
         initComponents();
@@ -29,7 +28,8 @@ public class ProviderSearchPanel extends javax.swing.JFrame {
     
     
     
-    private void SearchProvider(Provider newProvider) {
+    private void SearchProvider() {
+        Provider newProvider = new Provider();
         this.conectar.conectaBanco();
         
         String consultaCpf = this.txtCpf.getText();
@@ -58,7 +58,7 @@ public class ProviderSearchPanel extends javax.swing.JFrame {
             newProvider.SetPassword(this.conectar.getResultSet().getString(6));
             newProvider.SetCategory(this.conectar.getResultSet().getString(7));
         }
-        if(newProvider.GetCpf() == "") {
+        if(newProvider.GetName() == null) {
             JOptionPane.showMessageDialog(null, "Prestador não encontrado!");
         }
         
@@ -77,7 +77,9 @@ public class ProviderSearchPanel extends javax.swing.JFrame {
     }
     }
     
-    private void UpdateProvider(Provider newProvider) {
+    private void UpdateProvider() {
+        
+        Provider newProvider = new Provider();
         
         newProvider.SetName(txtName.getText());
         newProvider.SetCpf(txtCpf.getText());
@@ -354,7 +356,7 @@ public class ProviderSearchPanel extends javax.swing.JFrame {
     }//GEN-LAST:event_btnClearActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        SearchProvider(newProvider);
+        SearchProvider();
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
@@ -362,7 +364,7 @@ public class ProviderSearchPanel extends javax.swing.JFrame {
     }//GEN-LAST:event_txtEmailActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
-        UpdateProvider(newProvider);
+        UpdateProvider();
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed

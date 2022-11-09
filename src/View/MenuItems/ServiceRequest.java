@@ -27,6 +27,8 @@ MySQL conectar = new MySQL();
 
     private void ProviderSearch() {
         this.conectar.conectaBanco();
+        cbxProvider.removeAllItems();
+        
         String consultaCategoria = (String)cbxCategory.getSelectedItem();
         
         try {

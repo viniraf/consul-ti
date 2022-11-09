@@ -15,7 +15,6 @@ import javax.swing.JOptionPane;
 public class ProviderChangePassword extends javax.swing.JFrame {
 
 MySQL conectar = new MySQL();
-Provider newProvider = new Provider();
 
     public ProviderChangePassword() {
         initComponents();
