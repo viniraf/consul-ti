@@ -24,13 +24,13 @@ password		varchar(40)		not null,
 area			varchar(30)		not null
 );
 
-
 create table company (
 id				int				auto_increment		primary key,
 name			varchar(50)		not null			unique,
 cnpj			varchar(14)		not null			unique,				
 category		varchar(50)		not null,
-monthsContractTime	int			not null
+monthsContractTime	int			not null,
+dateCreation	date			default(SYSDATE()) 
 );
 
 create table services (
@@ -40,5 +40,6 @@ category		varchar(30)		not null,
 requester		varchar(40)		not null,
 finished		char			not null			default 'N',
 idProvider		int				not null			references provider(id),
-idCompany		int				not null			references company(id)
+idCompany		int				not null			references company(id),
+dateCreation	date			default(SYSDATE())
 );
