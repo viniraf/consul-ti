@@ -185,7 +185,10 @@ public class EmployeeLoginPanel extends javax.swing.JFrame {
      }
 
     
-    
+    private void ClearData() {
+        txtLogin.setText("");
+        txtPassword.setText("");
+    }
     
     
     private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarActionPerformed
@@ -213,7 +216,7 @@ public class EmployeeLoginPanel extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCadastrarActionPerformed
 
     private void jButtonLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimparActionPerformed
-        
+    ClearData();        
     }//GEN-LAST:event_jButtonLimparActionPerformed
 
     /**
