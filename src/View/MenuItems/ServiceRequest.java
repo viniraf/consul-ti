@@ -7,7 +7,6 @@ package View.MenuItems;
 import Connection.MySQL;
 import Entities.Company;
 import Entities.OnlyNumbers;
-import Entities.Provider;
 import Entities.Services;
 import javax.swing.JOptionPane;
 
@@ -96,7 +95,7 @@ MySQL conectar = new MySQL();
         txtRequester.setText("");
         cbxCategory.setSelectedIndex(0);
         txtDescription.setText("");
-        cbxCategory.removeAllItems();;
+        cbxProvider.removeAllItems();;
         txtId.setText("");
     }
     

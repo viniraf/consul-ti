@@ -143,10 +143,10 @@ private void UpdateFinished() {
             + "finished = '" + txtFinished.getText() + "'"
             + " WHERE id = '" + idService + "';"
             );
-            JOptionPane.showMessageDialog(null, "Empresa atualizada com sucesso!");
+            JOptionPane.showMessageDialog(null, "Serviço atualizado com sucesso!");
             } catch (Exception e) {
-            System.out.println("Erro ao atualizar a empresa: " + e.getMessage());
-            JOptionPane.showMessageDialog(null, "Erro ao atualizar a empresa!");
+            System.out.println("Erro ao atualizar o serviço: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Erro ao atualizar o serviço!");
         
         } finally {
             ClearData();
@@ -159,6 +159,15 @@ private void ClearData() {
     cbxCompany.removeAllItems();
     txtId.setText("");
     cbxServices.removeAllItems();
+    txtCategory.setText("");
+    txtProvider.setText("");
+    txtRequester.setText("");
+    txtDate.setText("");
+    txtFinished.setText("");
+    txtDescription.setText("");
+}
+
+private void ClearData2() {
     txtCategory.setText("");
     txtProvider.setText("");
     txtRequester.setText("");
@@ -460,6 +469,7 @@ private void ClearData() {
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         SearchCnpj();
         SearchServicesId();
+        ClearData2();
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

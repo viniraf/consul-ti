@@ -1,15 +1,12 @@
 
 package Connection;
 
-import Entities.ExceptionDAO;
-import Entities.User;
 import java.sql.Connection;
 import java.sql.Statement;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import com.mysql.jdbc.Driver;
-import java.sql.PreparedStatement;
 /**
  *
  * @author Macrr
@@ -21,10 +18,10 @@ public class MySQL {
     private Statement statement; //variável de manipulação do SQL
     private ResultSet resultSet;
     
-    private String servidor = "127.0.0.1:3306";
+    private String servidor = "localhost:3306";
     private String nomeDoBanco = "consulti";
     private String usuario = "root";
-    private String senha = "";
+    private String senha = "facens";
     
     //Construtor    
     public MySQL(){
@@ -132,6 +129,4 @@ public class MySQL {
         }
         return true;
     }
-    
-    
 }
