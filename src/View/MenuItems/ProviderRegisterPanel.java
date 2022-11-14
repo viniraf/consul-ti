@@ -4,7 +4,7 @@ import View.Login.*;
 import Connection.MySQL;
 import Entities.OnlyNumbers;
 import Entities.Provider;
-import Entities.User;
+import Entities.User1;
 import javax.swing.JOptionPane;
 
 

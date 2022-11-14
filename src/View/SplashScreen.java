@@ -4,7 +4,7 @@
  */
 package View;
 
-import View.Login.EmployeeLoginPanel;
+import View.Login.Login;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
@@ -177,8 +177,8 @@ public class SplashScreen extends javax.swing.JFrame {
                 }
             }
             splashScreen.dispose();
-            EmployeeLoginPanel employeeLoginPanel = new EmployeeLoginPanel();
-            employeeLoginPanel.setVisible(true);
+            Login obj = new Login();
+            obj.setVisible(true);
             
             
         } catch(InterruptedException e){

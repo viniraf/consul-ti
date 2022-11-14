@@ -4,7 +4,7 @@
  */
 package Entities;
 
-public class Provider extends User{
+public class Provider extends User1{
     
     private String category;
     

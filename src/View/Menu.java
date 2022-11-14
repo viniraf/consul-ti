@@ -4,7 +4,7 @@
  */
 package View;
 
-import View.Login.EmployeeLoginPanel;
+import View.Login.Login;
 import View.MenuItems.ServiceRequest;
 import View.MenuItems.ProviderSearchPanel;
 import View.MenuItems.CompanySearchPanel;
@@ -249,7 +249,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBuscarServicoActionPerformed
 
     private void jButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairActionPerformed
-        EmployeeLoginPanel obj = new EmployeeLoginPanel();
+        Login obj = new Login();
         obj.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonSairActionPerformed

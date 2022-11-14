@@ -18,10 +18,10 @@ public class MySQL {
     private Statement statement; //variável de manipulação do SQL
     private ResultSet resultSet;
     
-    private String servidor = "localhost:3306";
-    private String nomeDoBanco = "consulti";
+    private String servidor = "127.0.0.1:3306";
+    private String nomeDoBanco = "consul_ti";
     private String usuario = "root";
-    private String senha = "facens";
+    private String senha = "";
     
     //Construtor    
     public MySQL(){
