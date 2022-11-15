@@ -4,6 +4,7 @@
  */
 package View;
 
+import View.CustomMenu.MainMenu;
 import View.Login.Login;
 import java.awt.Color;
 import javax.swing.JOptionPane;
@@ -177,7 +178,7 @@ public class SplashScreen extends javax.swing.JFrame {
                 }
             }
             splashScreen.dispose();
-            Login obj = new Login();
+            MainMenu obj = new MainMenu();
             obj.setVisible(true);
             
             
