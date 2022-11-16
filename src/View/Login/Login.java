@@ -4,6 +4,7 @@ import Connection.MySQL;
 import Entities.Employee;
 import Entities.LoginModel;
 import Entities.User;
+import View.CustomMenu.MainMenu;
 import View.Menu;
 import View.Login.Others.Component.PanelCover;
 import View.Login.Others.Component.PanelLoginAndRegister;
@@ -199,13 +200,13 @@ public class Login extends javax.swing.JFrame {
             boolean operation = aut();
             
             if(operation){
-                Menu obj = new Menu();
-                obj.setVisible(true);
+                MainMenu mainMenu = new MainMenu();
+                mainMenu.setVisible(true);
                 this.dispose();
-                System.out.println("Usuário encontrado. Redirecionando para menu principal");
+                System.out.println("Usuario encontrado. Redirecionando para menu principal");
             } else {
                 JOptionPane.showMessageDialog(null, "Usuário e/ou senha inválidos. Digite novamente");
-                System.out.println("Usuário não encontrado. Tente novamente.");
+                System.out.println("Usuario nao encontrado. Tente novamente.");
             }
             
             
@@ -235,11 +236,11 @@ public class Login extends javax.swing.JFrame {
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 930, Short.MAX_VALUE)
+            .addGap(0, 1011, Short.MAX_VALUE)
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 538, Short.MAX_VALUE)
+            .addGap(0, 560, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

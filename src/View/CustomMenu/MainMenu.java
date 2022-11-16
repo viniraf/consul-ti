@@ -6,6 +6,7 @@ package View.CustomMenu;
 
 import View.CustomMenuItems.ProviderRegister;
 import View.CustomMenuItems.ProviderSearch;
+import View.Login.Login;
 import java.awt.Color;
 import java.awt.Component;
 import javaswingdev.GradientDropdownMenu;
@@ -24,15 +25,15 @@ public class MainMenu extends javax.swing.JFrame {
     public MainMenu() {
         initComponents();
         GradientDropdownMenu menu = new GradientDropdownMenu();
-        menu.setGradientColor(Color.black, Color.black);
-        menu.setBackground(Color.black);
+        menu.setGradientColor(new Color(27, 148, 201), new Color (27, 148, 201));
+        menu.setBackground(new Color(69, 183, 233));
         menu.setHeaderGradient(false);
      
         menu.addItem("Home");
         menu.addItem("Colaboradores", "Cadastrar colaboradores", "Consultar colaboradores");
         menu.addItem("Empresas", "Cadastrar empresas", "Consultar empresas");
         menu.addItem("Serviços", "Cadastrar serviços", "Consultar serviços");
-        menu.addItem("Sistema", "Deslogar do sistema", "Fechar o sistema");
+        menu.addItem("Sistema", "Deslogar do sistema", "Sair do sistema");
         menu.applay(this);
         menu.addEvent(new MenuEvent() {
             @Override
@@ -48,6 +49,14 @@ public class MainMenu extends javax.swing.JFrame {
                     //showForm(new Form3());
                 } 
                 
+                if (index == 4 && subIndex == 1){
+                    close();
+                    Login login = new Login();
+                    login.setVisible(true);
+                } else if (index == 4 && subIndex == 2){
+                    System.exit(0);
+                }
+                
                
                 
                
@@ -62,6 +71,10 @@ public class MainMenu extends javax.swing.JFrame {
         main.repaint();
         main.revalidate();
     }
+    
+    private void close(){
+        this.setVisible(false);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -74,10 +87,11 @@ public class MainMenu extends javax.swing.JFrame {
 
         main = new javax.swing.JPanel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Menu");
         setUndecorated(true);
 
-        main.setBackground(new java.awt.Color(153, 153, 153));
+        main.setForeground(new java.awt.Color(102, 102, 102));
         main.setLayout(new java.awt.BorderLayout());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -85,14 +99,12 @@ public class MainMenu extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(main, javax.swing.GroupLayout.PREFERRED_SIZE, 1005, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(main, javax.swing.GroupLayout.PREFERRED_SIZE, 1011, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(main, javax.swing.GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(main, javax.swing.GroupLayout.DEFAULT_SIZE, 560, Short.MAX_VALUE)
         );
 
         pack();

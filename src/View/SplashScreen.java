@@ -42,6 +42,7 @@ public class SplashScreen extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setBackground(new java.awt.Color(69, 183, 233));
         setUndecorated(true);
         setResizable(false);
 
@@ -178,8 +179,8 @@ public class SplashScreen extends javax.swing.JFrame {
                 }
             }
             splashScreen.dispose();
-            MainMenu obj = new MainMenu();
-            obj.setVisible(true);
+            Login login = new Login();
+            login.setVisible(true);
             
             
         } catch(InterruptedException e){
