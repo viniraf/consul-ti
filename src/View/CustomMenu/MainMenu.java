@@ -4,6 +4,8 @@
  */
 package View.CustomMenu;
 
+import View.CustomMenuItems.CompanyRegister;
+import View.CustomMenuItems.CompanySearch;
 import View.CustomMenuItems.ProviderRegister;
 import View.CustomMenuItems.ProviderSearch;
 import View.Login.Login;
@@ -46,8 +48,10 @@ public class MainMenu extends javax.swing.JFrame {
                 }
                 
                 if (index == 2 && subIndex == 1) {
-                    //showForm(new Form3());
-                } 
+                    showForm(new CompanyRegister());
+                } else if (index == 2 && subIndex == 2){
+                    showForm(new CompanySearch());
+                }
                 
                 if (index == 4 && subIndex == 1){
                     close();
