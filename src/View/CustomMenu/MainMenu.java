@@ -8,6 +8,8 @@ import View.CustomMenuItems.CompanyRegister;
 import View.CustomMenuItems.CompanySearch;
 import View.CustomMenuItems.ProviderRegister;
 import View.CustomMenuItems.ProviderSearch;
+import View.CustomMenuItems.ServiceRegister;
+import View.CustomMenuItems.ServiceSearch;
 import View.Login.Login;
 import java.awt.Color;
 import java.awt.Component;
@@ -51,6 +53,13 @@ public class MainMenu extends javax.swing.JFrame {
                     showForm(new CompanyRegister());
                 } else if (index == 2 && subIndex == 2){
                     showForm(new CompanySearch());
+                }
+                
+                if (index == 3 && subIndex == 1){
+                    showForm(new ServiceRegister());
+                } else if (index == 3 && subIndex == 2){
+                    System.out.println("Chamada tela consulta serviços");
+                    showForm(new ServiceSearch());
                 }
                 
                 if (index == 4 && subIndex == 1){

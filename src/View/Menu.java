@@ -10,7 +10,7 @@ import View.MenuItems.ProviderSearchPanel;
 import View.MenuItems.CompanySearchPanel;
 import View.MenuItems.CompanyRegisterPanel;
 import View.MenuItems.ProviderRegisterPanel;
-import View.MenuItems.ServiceSearch;
+//import View.MenuItems.ServiceSearch;
 
 /**
  *
@@ -244,8 +244,8 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSolicitarServicoActionPerformed
 
     private void btnBuscarServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarServicoActionPerformed
-        ServiceSearch obj = new ServiceSearch();
-        obj.setVisible(true);
+        //ServiceSearch obj = new ServiceSearch();
+        //obj.setVisible(true);
     }//GEN-LAST:event_btnBuscarServicoActionPerformed
 
     private void jButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairActionPerformed
