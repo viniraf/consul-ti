@@ -35,7 +35,7 @@ public class CompanySearch extends javax.swing.JPanel {
         txtCreationDate.setText("");
     }
     
-    private void SearchCompany(Company newCompany) {
+        private void SearchCompany(Company newCompany) {
         this.conectar.conectaBanco();
         
         String consultaCnpj = this.txtCnpj.getText();
@@ -54,11 +54,11 @@ public class CompanySearch extends javax.swing.JPanel {
             + " cnpj = '" + consultaCnpj + "'" + ";"
             );
         while(this.conectar.getResultSet().next()) {
-            newCompany.SetName(this.conectar.getResultSet().getString(1));
-            newCompany.SetCnpj(this.conectar.getResultSet().getString(2));
-            newCompany.SetCategory(this.conectar.getResultSet().getString(3));
-            newCompany.SetMonthsContractTime(Integer.parseInt(this.conectar.getResultSet().getString(4)));
-            newCompany.SetCreationDate(this.conectar.getResultSet().getString(5));
+            txtName.setText(this.conectar.getResultSet().getString(1));
+            txtCnpj.setText(this.conectar.getResultSet().getString(2));
+            txtCategory.setText(this.conectar.getResultSet().getString(3));
+            txtMonths.setText(this.conectar.getResultSet().getString(4));
+            txtCreationDate.setText(this.conectar.getResultSet().getString(5).replace('-', '/'));
         }
         if(newCompany.GetCnpj() == "") {
             JOptionPane.showMessageDialog(null, "Company não encontrado!");
@@ -69,11 +69,6 @@ public class CompanySearch extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Erro ao buscar Company!");
         
         } finally {
-            txtName.setText(newCompany.GetName());
-            txtCnpj.setText(newCompany.GetCnpj());
-            txtCategory.setText(newCompany.GetCategory());
-            txtMonths.setText(Integer.toString(newCompany.GetMonthsContractTime()));
-            txtCreationDate.setText(newCompany.GetCreationDate().replace('-', '/'));
             this.conectar.fechaBanco();     
         }
     }
