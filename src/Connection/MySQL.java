@@ -19,7 +19,7 @@ public class MySQL {
     private ResultSet resultSet;
     
     private String servidor = "127.0.0.1:3306";
-    private String nomeDoBanco = "consul_ti";
+    private String nomeDoBanco = "consulti";
     private String usuario = "root";
     private String senha = "";
     

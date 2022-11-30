@@ -144,9 +144,9 @@ public class Login extends javax.swing.JFrame {
         newUser.setPassword(user.getPassword());
 
         try {
-            this.conectar.insertSQL("INSERT INTO usuarios ("
-                    + "usuario,"
-                    + "senha"
+            this.conectar.insertSQL("INSERT INTO user ("
+                    + "login,"
+                    + "password"
                 + ") VALUES ("
                     + "'" + newUser.getLogin()+ "',"
                     + "'" + newUser.getPassword() + "'"
@@ -184,9 +184,9 @@ public class Login extends javax.swing.JFrame {
         this.conectar.executarSQL(
             "SELECT * "
             + " FROM"
-            + " usuarios"
+            + " user"
           + " WHERE"
-            + " usuario = '" + userAut.getLogin() + "'" + " and senha = '" + userAut.getPassword() + "';"
+            + " login = '" + userAut.getLogin() + "'" + " and password = '" + userAut.getPassword() + "';"
             );
             return this.conectar.getResultSet().next(); 
         
