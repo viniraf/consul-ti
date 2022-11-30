@@ -15,8 +15,6 @@ name			varchar(50)		not null,
 cpf				varchar(20)		not null				unique,
 email			varchar(50)		not null				unique,
 registration	int				not null				unique,
-login			varchar(30)		not null				unique,
-password		varchar(40)		not null,
 category		varchar(30)		not null
 );
 
