@@ -8,40 +8,28 @@ package Entities;
  *
  * @author vinic
  */
-public class User {
+public class LoginModel {
     
     // Atributos
-    int id;
-    String login;
-    String password;
+    private String login;
+    private String password;
 
     
     // Construtores
-    public User() {
+
+    public LoginModel() {
     }
 
-    public User(String login, String password) {
-        this.login = login;
-        this.password = password;
-    }
-
-    public User(int id, String login, String password) {
-        this.id = id;
+    public LoginModel(String login, String password) {
         this.login = login;
         this.password = password;
     }
 
 
     
+
+    
     // Getters e Setters
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getLogin() {
         return login;
     }
@@ -57,7 +45,6 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-    
     
     
 }

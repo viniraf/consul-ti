@@ -4,7 +4,7 @@
  */
 package Entities;
 
-public class Employee extends User{
+public class Employee extends User1{
     
     private String area;
     

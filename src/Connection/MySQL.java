@@ -18,10 +18,49 @@ public class MySQL {
     private Statement statement; //variável de manipulação do SQL
     private ResultSet resultSet;
     
+        // Para mudar a conexão do banco, comente algum bloco e descomente outro
+    
+    // Bloco 1 - Pc facens
+    /*
     private String servidor = "localhost:3306";
+    private String nomeDoBanco = "SimuladorNotas";
+    private String usuario = "root";
+    private String senha = "facens";
+    */
+    
+    // Bloco 2 - Pc vini
+    
+    private String servidor = "127.0.0.1:3306";
+    private String nomeDoBanco = "consulti";
+    private String usuario = "root";
+    private String senha = "";
+    
+    
+    // Bloco 3 - Pc ander
+    /*
+    private String servidor = "127.0.0.1:3306";
     private String nomeDoBanco = "consulti";
     private String usuario = "root";
     private String senha = "facens";
+    */
+    
+    // Bloco 4 - Pc gaby
+    /*
+    private String servidor = "127.0.0.1:3306";
+    private String nomeDoBanco = "consulti";
+    private String usuario = "root";
+    private String senha = "";
+    */
+    
+    
+    
+    // Bloco 5 - Pc qualquer
+    /*
+    private String servidor = "127.0.0.1:3306";
+    private String nomeDoBanco = "consulti";
+    private String usuario = "root";
+    private String senha = "";
+    */
     
     //Construtor    
     public MySQL(){
@@ -63,7 +102,7 @@ public class MySQL {
         try {
             //Class.forName("com.mysql.jdbc.Driver").newInstance();
 
-            conn = DriverManager.getConnection("jdbc:mysql://" + servidor + "/" + nomeDoBanco, usuario, senha);
+            conn = DriverManager.getConnection("jdbc:mysql://" + servidor + "/" + nomeDoBanco + "?user=" + usuario + "&password=" + senha + "&useSSL=false" );
             //conn = DriverManager.getConnection("jdbc:mysql://localhost3306/banco_loja", "root", "root");
             
             if(conn != null){
