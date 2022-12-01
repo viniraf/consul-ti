@@ -1,0 +1,29 @@
+1. Botão direito na area de trabalho e clique em "git bash here"
+
+2. Digite "git clone https://github.com/viniraf/consul-ti" e aperte enter
+
+3. Abra a pasta nova que foi criada na area de trabalho com o nome "simulador-notas"
+
+4. Clique com o botão direito e clique em "git bash here"
+
+5. Digite "git checkout ajusteAF" e aperte enter
+
+6. Verifique se esta aparecendo "consul-ti (ajusteAF) - Isso indica que mudou de branch
+
+7. Dentro da pasta, terá um arquivo com o nome "ScriptSQL". Abra ele dentro do MySQLWorkbench
+
+8. Execute o Script
+
+9. Abra o netbeans e clique em "Open Project"
+
+10. Encontre a pasta criada com o nome "consul-ti"
+
+11. Selecione o arquivo "ConsulTI" com um icone da xicara do Java
+
+12. Clique em "Open a Project"
+
+13. Abra o pacote "Connection" 
+
+14. Abra o arquivo "MySQL.java"
+
+15. Configure corretamente a conexão com o banco em que você rodou o script (mudar o servidor e senha caso tiver)
