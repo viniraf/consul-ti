@@ -32,8 +32,8 @@ public class MainMenu extends javax.swing.JFrame {
         menu.setGradientColor(new Color(27, 148, 201), new Color (27, 148, 201));
         menu.setBackground(new Color(69, 183, 233));
         menu.setHeaderGradient(false);
+        showForm(new ProviderRegister());
      
-        menu.addItem("Home");
         menu.addItem("Colaboradores", "Cadastrar colaboradores", "Consultar colaboradores");
         menu.addItem("Empresas", "Cadastrar empresas", "Consultar empresas");
         menu.addItem("Serviços", "Cadastrar serviços", "Consultar serviços");
@@ -43,30 +43,29 @@ public class MainMenu extends javax.swing.JFrame {
             @Override
             public void selected(int index, int subIndex, boolean menuItem) {
                 
-                if(index == 1 && subIndex == 1) {
+                if(index == 0 && subIndex == 1) {
                    showForm(new ProviderRegister());
-                } else if (index == 1 && subIndex == 2){
+                } else if (index == 0 && subIndex == 2){
                     showForm(new ProviderSearch());
                 }
                 
-                if (index == 2 && subIndex == 1) {
+                if (index == 1 && subIndex == 1) {
                     showForm(new CompanyRegister());
-                } else if (index == 2 && subIndex == 2){
+                } else if (index == 1 && subIndex == 2){
                     showForm(new CompanySearch());
                 }
                 
-                if (index == 3 && subIndex == 1){
+                if (index == 2 && subIndex == 1){
                     showForm(new ServiceRegister());
-                } else if (index == 3 && subIndex == 2){
-                    System.out.println("Chamada tela consulta serviços");
+                } else if (index == 2 && subIndex == 2){
                     showForm(new ServiceSearch());
                 }
                 
-                if (index == 4 && subIndex == 1){
+                if (index == 3 && subIndex == 1){
                     close();
                     Login login = new Login();
                     login.setVisible(true);
-                } else if (index == 4 && subIndex == 2){
+                } else if (index == 3 && subIndex == 2){
                     System.exit(0);
                 }
                 

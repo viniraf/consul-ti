@@ -5,7 +5,6 @@ import Entities.Employee;
 import Entities.LoginModel;
 import Entities.User;
 import View.CustomMenu.MainMenu;
-import View.Menu;
 import View.Login.Others.Component.PanelCover;
 import View.Login.Others.Component.PanelLoginAndRegister;
 import java.awt.Component;
