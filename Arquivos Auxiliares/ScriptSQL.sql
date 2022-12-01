@@ -18,17 +18,6 @@ registration	int				not null				unique,
 category		varchar(30)		not null
 );
 
-create table employee (
-id				int				auto_increment			primary key,
-name			varchar(50)		not null,
-cpf				varchar(20)		not null				unique,
-email			varchar(50)		not null				unique,
-registration	int				not null				unique,
-area			varchar(30)		not null
-);
-
-
-
 create table company (
 id				int				auto_increment		primary key,
 name			varchar(50)		not null			unique,
