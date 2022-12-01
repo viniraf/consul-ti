@@ -31,6 +31,7 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+/nbproject
 
 # Eclipse
 .classpath
@@ -48,3 +49,6 @@ nbdist/
 # Maven
 log/
 target/
+
+*.xml
+*.mf
